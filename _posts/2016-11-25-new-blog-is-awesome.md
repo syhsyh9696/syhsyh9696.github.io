@@ -16,7 +16,9 @@ categories:
 JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小问题，HEXO就栽在了上面。
 
 如果想在自己的电脑上预览的话，执行
-```
-jekyll s --no-watch
-```
+{% highlight bash %}
+> jekyll s --no-watch
+
+{% endhighlight %}
+
 最后的最后，我只想说：ruby不知道比python那一套高到哪里去了 (逃

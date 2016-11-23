@@ -3,10 +3,10 @@
   <channel>
     <title>BronyS' Blog</title>
     <description>CS / Ruby / OSU player</description>
-    <link>http://syhsyh9696.github.io/</link>
-    <atom:link href="http://syhsyh9696.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Nov 2016 11:38:29 +0800</pubDate>
-    <lastBuildDate>Wed, 23 Nov 2016 11:38:29 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 23 Nov 2016 11:41:39 +0800</pubDate>
+    <lastBuildDate>Wed, 23 Nov 2016 11:41:39 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -16,14 +16,14 @@
 JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小问题，HEXO就栽在了上面。&lt;/p&gt;
 
 &lt;p&gt;如果想在自己的电脑上预览的话，执行&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll s --no-watch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;jekyll s --no-watch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;p&gt;最后的最后，我只想说：ruby不知道比python那一套高到哪里去了 (逃&lt;/p&gt;
 </description>
         <pubDate>Tue, 13 Sep 2016 09:00:00 +0800</pubDate>
-        <link>http://syhsyh9696.github.io/new-blog-is-awesome/</link>
-        <guid isPermaLink="true">http://syhsyh9696.github.io/new-blog-is-awesome/</guid>
+        <link>http://localhost:4000/new-blog-is-awesome/</link>
+        <guid isPermaLink="true">http://localhost:4000/new-blog-is-awesome/</guid>
         
         <category>Daily</category>
         
