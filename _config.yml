@@ -2,7 +2,7 @@
 title: BronyS' Blog
 description: "CS / Ruby / OSU player"
 baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
-url: "syhsyh9696.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
+url: "http://syhsyh9696.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
 
 # User settings
 username: syhsyh9696
