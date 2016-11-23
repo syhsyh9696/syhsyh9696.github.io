@@ -1,0 +1,50 @@
+# Site settings
+title: BronyS' Blog
+description: "CS / Ruby / OSU player"
+baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
+url: "syhsyh9696.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
+
+# User settings
+username: syhsyh9696
+user_title: syhsyh9696 - Ruby programming language lover
+email: sunyuanhao123456@gmail.com
+twitter_username: syhsyh9696
+github_username:  syhsyh9696
+gplus_username:  null
+disqus_username: null
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+links:
+  - title: home
+    url: /
+  - title: my posts
+    url: /posts
+  - title: series
+    url: /series
+  - title: tags
+    url: /tags
+  - title: about me
+    url: /about
+# projects in header index
+projects:
+  - name: ujnphotobot-telegrambot-ruby
+    url: https://github.com/syhsyh9696/ujnphotobot-telegrambot-ruby
+  - name: ujn-electromagneticlock-ruby
+    url: https://github.com/syhsyh9696/ujn-electromagneticlock-ruby
+  - name: null
+    url: null
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
