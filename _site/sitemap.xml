@@ -5,4 +5,8 @@
 		<loc>http://localhost:4000/new-blog-is-awesome/</loc>
 	  </url>
 	
+	  <url>
+		<loc>http://localhost:4000/Daily-VPS/</loc>
+	  </url>
+	
 </urlset>

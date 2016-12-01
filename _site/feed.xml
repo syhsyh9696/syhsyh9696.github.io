@@ -5,8 +5,8 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Nov 2016 18:01:46 +0800</pubDate>
-    <lastBuildDate>Fri, 25 Nov 2016 18:01:46 +0800</lastBuildDate>
+    <pubDate>Thu, 01 Dec 2016 14:27:32 +0800</pubDate>
+    <lastBuildDate>Thu, 01 Dec 2016 14:27:32 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -29,6 +29,84 @@ JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小�
         
         
         <category>SYH的自留地</category>
+        
+      </item>
+    
+      <item>
+        <title>Linode-Tokyo2 购入!</title>
+        <description>&lt;h2 id=&quot;bandwagon--linode-tokyo2&quot;&gt;&lt;strong&gt;Bandwagon =&amp;gt; Linode-Tokyo2&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;这个月的Bandwagon真是抽风的厉害，晚上在实验室什么也干不成，而且已经续费了十四个月马上到期，这是前提。&lt;/p&gt;
+
+&lt;p&gt;于是我就比对了一下周围近一些的提供商&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;提供商&lt;/th&gt;
+      &lt;th&gt;位置&lt;/th&gt;
+      &lt;th&gt;优点&lt;/th&gt;
+      &lt;th&gt;缺点&lt;/th&gt;
+      &lt;th&gt;价格&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bandwagon&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;特别便宜&lt;/td&gt;
+      &lt;td&gt;超售!晚上爆炸&lt;/td&gt;
+      &lt;td&gt;M:2.99$ Y:19.99$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vultr&lt;/td&gt;
+      &lt;td&gt;JP SG&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;便宜 活动多&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;买的人多线路爆炸&lt;/td&gt;
+      &lt;td&gt;全是活动没法算价格&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Linode&lt;/td&gt;
+      &lt;td&gt;JP SG&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;快&lt;/strong&gt; 稳定 管理强&lt;/td&gt;
+      &lt;td&gt;贵! 也是NTT线路&lt;/td&gt;
+      &lt;td&gt;M:10$ Y:120$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;当看完这几家后，我觉得Vultr强!无敌!就是它了，然后就打开了Speedtest，然后就没有然后了，因为实在是太慢了，
+和B家一样人太多线路太繁忙，于是作罢。&lt;/p&gt;
+
+&lt;p&gt;转念一想，和我一起租用VPS的都是高富帅，我们为什么不搞一个高富帅主机呢？就决定是你了Linode!
+Linode-Tokyo1机房早就变成传家宝了，价格高的无法接受，退而求其次，Linode-Tokyo2也是不错的选择。&lt;/p&gt;
+
+&lt;p&gt;Linode-Tokyo2的配置
+1-CORE|2GB-RAM|24GB-STORTAGE|2TB-TRANSFER&lt;/p&gt;
+
+&lt;h2 id=&quot;配置方法&quot;&gt;&lt;strong&gt;配置方法&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;不安装锐速的话，四个人是一定不能用的，所以安装好CentOS 7和Shadowsocks后第一件事情就是安装锐速&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash serverspeeder-all.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果内核是在&lt;a href=&quot;https://www.91yun.org/wp-content/plugins/91yun-serverspeeder/systemlist.html&quot;&gt;支持的内核&lt;/a&gt;里面的话，
+执行上一步就可以了，然而我的内核并不是受到支持的，需要更换VPS的内核。
+这个时候就要请出Linode的后台管理了 强!无敌! 在管理页面里更换成受支持的内核就可以了，锐速一开在Youtube上看1440P的视频都没有问题了。&lt;/p&gt;
+
+&lt;h2 id=&quot;依旧存在的问题&quot;&gt;&lt;strong&gt;依旧存在的问题&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Linode-Tokyo2机房是刚开的，IP是刚广播的，APNIC的数据库还没更新，所以显示的地址还是SG&lt;/p&gt;
+
+&lt;p&gt;再就是Ping值有时候还是高，到了200ms，一般在130ms，希望以后的线路优化能好点，毕竟老牌大厂。&lt;/p&gt;
+
+&lt;p&gt;现在，可以静静看着那些用着Bandwagon的那些人了。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 12 Sep 2016 08:06:31 +0800</pubDate>
+        <link>http://localhost:4000/Daily-VPS/</link>
+        <guid isPermaLink="true">http://localhost:4000/Daily-VPS/</guid>
+        
+        <category>VPS</category>
+        
+        
+        <category>折腾纪实</category>
         
       </item>
     

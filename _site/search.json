@@ -6,6 +6,14 @@
       "tags"     : "Daily",
       "url"      : "/new-blog-is-awesome/",
       "date"     : "13 Sep 2016"
+    } ,
+  
+    {
+      "title"    : "Linode-Tokyo2 购入!",
+      "category" : "折腾纪实",
+      "tags"     : "VPS",
+      "url"      : "/Daily-VPS/",
+      "date"     : "12 Sep 2016"
     } 
   
 ]
