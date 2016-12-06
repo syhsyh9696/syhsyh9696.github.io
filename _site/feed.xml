@@ -5,27 +5,51 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Dec 2016 14:27:32 +0800</pubDate>
-    <lastBuildDate>Thu, 01 Dec 2016 14:27:32 +0800</lastBuildDate>
+    <pubDate>Wed, 07 Dec 2016 00:25:40 +0800</pubDate>
+    <lastBuildDate>Wed, 07 Dec 2016 00:25:40 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>第第第第一篇</title>
-        <description>&lt;h2 id=&quot;hexo--jekyll&quot;&gt;&lt;strong&gt;HEXO =&amp;gt; JEKYLL&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;终于搞定了，再再再一次换了Blog框架，这次我保证，一个星期怎么着也会有一篇的
-JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小问题，HEXO就栽在了上面。&lt;/p&gt;
+        <title>Ruby神教徒自吹</title>
+        <description>&lt;h2 id=&quot;ruby编程有感&quot;&gt;&lt;strong&gt;Ruby编程有感&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;又到了吹Ruby的季节了，看完了Ruby的语法介绍加上1/4的Ruby元编程，感觉原来还可以这么优雅的搞自己
+那些玩具程序。用代码生成代码，面向对象更加的纯粹，这一切真的是太棒了。&lt;/p&gt;
 
-&lt;p&gt;如果想在自己的电脑上预览的话，执行&lt;/p&gt;
+&lt;p&gt;就拿Ruby的IO类来说吧，无论是Socket类还是RS232接口的相关gem，很多都是从IO类继承过来的，所有的
+IO类的方法都可以无缝衔接，比如今天写Socket相关应用的时候&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;jekyll s --no-watch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TCPServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gets&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;puts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ctime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;最后的最后，我只想说：ruby不知道比python那一套高到哪里去了 (逃&lt;/p&gt;
+&lt;p&gt;写出这些完全不用看Rdocs，都是凭着感觉写出来的没有任何问题。同样的Ruby操作Linux下/dev的设备的时
+，有的方法也是完全共通的。万物皆对象这是我最喜欢的。&lt;/p&gt;
+
+&lt;p&gt;最后再牢骚两句，Ruby在web方面和一些直接操作硬件的方面造诣真的挺深的，OOP也更纯粹，所谓的性能不足在现在来说根本就不是问题，不要总是拿C#或者Java这种高级武器去面对几百行解决的问题，杀鸡焉用牛刀？&lt;/p&gt;
+
+&lt;p&gt;也是因为ujn-electromagneticlock-ruby这个项目，从被喷的狗屁不如到现在基本功能基本完善和相关
+模块不断增加，我觉得这个过程中我也学到了不少。喷稳定性我加了不少稳定性的方法，喷数据不稳定便链接
+到远端的服务器等等，反正我做出过什么东西从来都是在被喷中不断完善也早就习惯了。同样也要感谢@WangSq
+花了那么多时间给我做硬件那块。&lt;/p&gt;
+
+&lt;p&gt;下一步我抽一点时间写学一部分关于ROR的相关知识争取搞一套实验室的信息综合分发网站一类的吧，让实验室变得
+智能化一点，要不实在是太Low了。&lt;/p&gt;
+
+&lt;p&gt;还有就是好想买手办啊 东条希 松浦果南 星空凛 南琴梨 还有Filco minila air，是时候攒钱了。&lt;/p&gt;
+
+&lt;p&gt;最后&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ruby&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Think elegant.&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Tue, 13 Sep 2016 09:00:00 +0800</pubDate>
-        <link>http://localhost:4000/new-blog-is-awesome/</link>
-        <guid isPermaLink="true">http://localhost:4000/new-blog-is-awesome/</guid>
+        <pubDate>Tue, 06 Dec 2016 16:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Ruby-now/</link>
+        <guid isPermaLink="true">http://localhost:4000/Ruby-now/</guid>
         
-        <category>Daily</category>
+        <category>Ruby</category>
         
         
         <category>SYH的自留地</category>
@@ -99,7 +123,7 @@ Linode-Tokyo1机房早就变成传家宝了，价格高的无法接受，退而�
 
 &lt;p&gt;现在，可以静静看着那些用着Bandwagon的那些人了。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 12 Sep 2016 08:06:31 +0800</pubDate>
+        <pubDate>Thu, 01 Dec 2016 20:00:00 +0800</pubDate>
         <link>http://localhost:4000/Daily-VPS/</link>
         <guid isPermaLink="true">http://localhost:4000/Daily-VPS/</guid>
         
@@ -107,6 +131,29 @@ Linode-Tokyo1机房早就变成传家宝了，价格高的无法接受，退而�
         
         
         <category>折腾纪实</category>
+        
+      </item>
+    
+      <item>
+        <title>第第第第一篇</title>
+        <description>&lt;h2 id=&quot;hexo--jekyll&quot;&gt;&lt;strong&gt;HEXO =&amp;gt; JEKYLL&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;终于搞定了，再再再一次换了Blog框架，这次我保证，一个星期怎么着也会有一篇的
+JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小问题，HEXO就栽在了上面。&lt;/p&gt;
+
+&lt;p&gt;如果想在自己的电脑上预览的话，执行&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;jekyll s --no-watch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;最后的最后，我只想说：ruby不知道比python那一套高到哪里去了 (逃&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Sep 2016 09:00:00 +0800</pubDate>
+        <link>http://localhost:4000/new-blog-is-awesome/</link>
+        <guid isPermaLink="true">http://localhost:4000/new-blog-is-awesome/</guid>
+        
+        <category>Daily</category>
+        
+        
+        <category>SYH的自留地</category>
         
       </item>
     

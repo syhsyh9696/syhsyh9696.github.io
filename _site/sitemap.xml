@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	  <url>
-		<loc>http://localhost:4000/new-blog-is-awesome/</loc>
+		<loc>http://localhost:4000/Ruby-now/</loc>
 	  </url>
 	
 	  <url>
 		<loc>http://localhost:4000/Daily-VPS/</loc>
+	  </url>
+	
+	  <url>
+		<loc>http://localhost:4000/new-blog-is-awesome/</loc>
 	  </url>
 	
 </urlset>

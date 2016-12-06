@@ -3,7 +3,6 @@ layout: post
 title:  "Linode-Tokyo2 购入!"
 date: 2016-12-01 12:00:00
 image: ''
-date:   2016-09-12 00:06:31
 tags:
 - VPS
 description: ''
