@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "历史的进程 - Emacs学习初篇",
+      "category" : "SYH的自留地",
+      "tags"     : "Daily",
+      "url"      : "/Emacs-chapter_1/",
+      "date"     : "10 Dec 2016"
+    } ,
+  
+    {
       "title"    : "Ruby神教徒自吹",
       "category" : "SYH的自留地",
       "tags"     : "Ruby",

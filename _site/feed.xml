@@ -5,9 +5,45 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Dec 2016 15:15:59 +0800</pubDate>
-    <lastBuildDate>Thu, 08 Dec 2016 15:15:59 +0800</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2016 20:41:57 +0800</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2016 20:41:57 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>历史的进程 - Emacs学习初篇</title>
+        <description>&lt;h2 id=&quot;the-editor-of-gods&quot;&gt;&lt;strong&gt;The Editor of God’s&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Atom.AlwaysBug?()&lt;/p&gt;
+
+&lt;p&gt;Atom又一次抽风了，这一次是如果不外接显示器的话，
+它是默认在屏幕显示外面的而且根本拖动不回来。
+加之Sublime的输入法漂移，我能怎么办，我也很绝望啊。&lt;/p&gt;
+
+&lt;p&gt;于是，我就打开了在我电脑存放了很长时间的Emacs 25.1-The Editor of God’s。
+初次上手Emacs很不习惯，所有的命令都和Ctrl挂钩，而且x1-carbon的ctrl在一个很奇怪的位置。
+没过一会Emacs卡的不行，找了半天原因发现原来是Emacs用一种韩文字体显示中文，所以一直在
+fallback，导致编辑器变得很卡。&lt;/p&gt;
+
+&lt;p&gt;所以安装好Emacs之后一定要做的 (Windows)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;更换一个字体&lt;/li&gt;
+  &lt;li&gt;更换ctrl和capslock(如果你的手不想疼的话)&lt;/li&gt;
+  &lt;li&gt;如果用WSL的话，在’.bashrc’或者’.zshrc’加上这么一条 alias vim=’emacs’(心无旁骛 逃&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为很看好在Emacs下可以收发邮件，所以在vim和Emacs中选择了Emacs，等看完所有的教程再
+写一篇常用的命令集合，命令太多了根本记不住。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 10 Dec 2016 16:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Emacs-chapter_1/</link>
+        <guid isPermaLink="true">http://localhost:4000/Emacs-chapter_1/</guid>
+        
+        <category>Daily</category>
+        
+        
+        <category>SYH的自留地</category>
+        
+      </item>
     
       <item>
         <title>Ruby神教徒自吹</title>
