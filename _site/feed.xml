@@ -5,9 +5,23 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 20:41:57 +0800</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 20:41:57 +0800</lastBuildDate>
+    <pubDate>Sun, 11 Dec 2016 23:53:37 +0800</pubDate>
+    <lastBuildDate>Sun, 11 Dec 2016 23:53:37 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Ruby的集合遍历</title>
+        <description>&lt;h2 id=&quot;ruby的遍历方法&quot;&gt;&lt;strong&gt;Ruby的遍历方法&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;因为最近经常需要用到集合的遍历，看完镐头书(Ruby Programming) 相关章节后总结下常见的方法。&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;each&lt;/em&gt;&lt;/strong&gt; 基本上来说就是处于取代了for的作用，当你需要迭代一个集合的时候 each都是可以的选择，而且each比for方便很多&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Do something &lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;map&lt;/em&gt;&lt;/strong&gt; 和each的作用大概相同，最大的不同就是map会将处理后的结果返回， 省了temp一类的中间变量&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Return [2, 4, 6] &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:upcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Return ['A', 'B', 'C']&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;select&lt;/em&gt;&lt;/strong&gt; 从前向后的迭代计算计算结果为true的元素，当作正向的filter&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span...</description>
+        <pubDate>Sat, 10 Dec 2016 17:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Ruby-traversal/</link>
+        <guid isPermaLink="true">http://localhost:4000/Ruby-traversal/</guid>
+        
+        <category>Ruby</category>
+        
+        
+        <category>Ruby notes</category>
+        
+      </item>
     
       <item>
         <title>历史的进程 - Emacs学习初篇</title>
@@ -24,11 +38,11 @@
 fallback，导致编辑器变得很卡。&lt;/p&gt;
 
 &lt;p&gt;所以安装好Emacs之后一定要做的 (Windows)&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
   &lt;li&gt;更换一个字体&lt;/li&gt;
   &lt;li&gt;更换ctrl和capslock(如果你的手不想疼的话)&lt;/li&gt;
   &lt;li&gt;如果用WSL的话，在’.bashrc’或者’.zshrc’加上这么一条 alias vim=’emacs’(心无旁骛 逃&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;因为很看好在Emacs下可以收发邮件，所以在vim和Emacs中选择了Emacs，等看完所有的教程再
 写一篇常用的命令集合，命令太多了根本记不住。&lt;/p&gt;
