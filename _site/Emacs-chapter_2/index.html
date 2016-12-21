@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>历史的进程 - Emacs学习初篇</title>
+    <title>历史的进程 - Emacs配置初篇</title>
     <meta name="description" content="">
 
     <!-- Google Authorship Markup -->
@@ -14,15 +14,15 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@syhsyh9696">
-    <meta name="twitter:title" content="历史的进程 - Emacs学习初篇">
+    <meta name="twitter:title" content="历史的进程 - Emacs配置初篇">
     <meta name="twitter:description" content="">
     
     <meta property="twitter:image:src" content="http://localhost:4000">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/Emacs-chapter_1/">
-    <meta property="og:title" content="历史的进程 - Emacs学习初篇">
+    <meta property="og:url" content="http://localhost:4000/Emacs-chapter_2/">
+    <meta property="og:title" content="历史的进程 - Emacs配置初篇">
     
     <meta property="og:image" content="http://localhost:4000">
     
@@ -30,7 +30,7 @@
     <meta property="og:site_name" content="BronyS' Blog">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="历史的进程 - Emacs学习初篇"/>
+    <meta itemprop="name" content="历史的进程 - Emacs配置初篇"/>
     <meta itemprop="description" content="">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
@@ -57,7 +57,7 @@
     <meta name="theme-color" content="#5d4d7a">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/Emacs-chapter_1/">
+    <link rel="canonical" href="http://localhost:4000/Emacs-chapter_2/">
     <link rel="alternate" type="application/rss+xml" title="BronyS' Blog" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -84,7 +84,7 @@
   
     <ul>
       <li><span>1</span></li>
-      <li><span> /Emacs-chapter_1/</span></li>
+      <li><span> /Emacs-chapter_2/</span></li>
       <li><span>⌘ blogspace  λ </span></li>
       <li><span>* Menu</span></li>
     </ul>
@@ -208,48 +208,63 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2016-12-10 16:00:00 +0800">10 Dec 2016</time>
+                    <time itemprop="datePublished" datetime="2016-12-21 16:00:00 +0800">21 Dec 2016</time>
                 </div>
             
-            <h1 class="post-title" itemprop="name">历史的进程 - Emacs学习初篇</h1>
+            <h1 class="post-title" itemprop="name">历史的进程 - Emacs配置初篇</h1>
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <h2 id="the-editor-of-gods"><strong>The Editor of God’s</strong></h2>
-<p>Atom.AlwaysBug?()</p>
+                <h2 id="emacs的包管理"><strong>Emacs的包管理</strong></h2>
 
-<p>Atom又一次抽风了，这一次是如果不外接显示器的话，
-它是默认在屏幕显示外面的而且根本拖动不回来。
-加之Sublime的输入法漂移，我能怎么办，我也很绝望啊。</p>
+<p>一位一些大家都知道的原因， Emacs的源有一些是不能用的，
+如果是在Linux下的话，用proxychains还是可以很方便的，
+但是如果是Emacs for windows，这个问题不知道该怎么解决了，除非你用WSL。
+所以没办法，换别的源吧</p>
 
-<p>于是，我就打开了在我电脑存放了很长时间的Emacs 25.1-The Editor of God’s。
-初次上手Emacs很不习惯，所有的命令都和Ctrl挂钩，而且x1-carbon的ctrl在一个很奇怪的位置。
-没过一会Emacs卡的不行，找了半天原因发现原来是Emacs用一种韩文字体显示中文，所以一直在
-fallback，导致编辑器变得很卡。</p>
+<p>所谓的包管理，在Emacs里面叫做package mode，
+想查看自己目前的packages-list的话，使用组合键 M+x list-packages 可以查看自己现在可用的包
+在这个buffer里可以使用C-h m了解更多的操作帮助。</p>
 
-<p>所以安装好Emacs之后一定要做的 (Windows)</p>
+<p>这个packages-list是从网络上下载下来的，这个下载地址叫做Package Archives，
+使用组合键 C-h v package-archives 可以查看这个变量值，默认情况下只有一个源，导致包不是很多。</p>
+
+<p>为了实现更多的扩展功能我还是要添加更多的Package源，
+利用组合键 M-x customize-variable RET package-archives 可以进入到一个新的buffer，
+就可以在这个里面添加常用的源了，一般来说，中科大的和清华大学的源都是很好用的，
+不过还有一个</p>
+
 <ol>
-  <li>更换一个字体</li>
-  <li>更换ctrl和capslock(如果你的手不想疼的话)</li>
-  <li>如果用WSL的话，在’.bashrc’或者’.zshrc’加上这么一条 alias vim=’emacs’(心无旁骛 逃</li>
+  <li>(“popkit” . “http://elpa.popkit.org/packages/”)</li>
 </ol>
 
-<p>因为很看好在Emacs下可以收发邮件，所以在vim和Emacs中选择了Emacs，等看完所有的教程再
-写一篇常用的命令集合，命令太多了根本记不住。</p>
+<p>这个源有的时候也是非常的好用，是以为大陆的Emacs用户个人维护的，有的时候也是非常的快。</p>
 
+<h2 id="emacs-theme"><strong>Emacs Theme</strong></h2>
+
+<p>在用了几天自带的主题之后，我实在是被自带的mode-line丑的不要不要的，
+找了好几天终于发现了一个很对我口味的主题</p>
+
+<ol>
+  <li>Emacs-Dracula https://draculatheme.com/emacs/</li>
+</ol>
+
+<p>这个主题配色非常的好看，主要是mode-line不是那么反人类了，写起东西来也变得非常舒服了。</p>
+
+<p>在我的调教下，Emacs逐渐变得越来越好用了。</p>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/Emacs-chapter_1/%20via%20&#64;syhsyh9696&hashtags=Daily,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/Emacs-chapter_2/%20via%20&#64;syhsyh9696&hashtags=Daily,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Emacs-chapter_1/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Emacs-chapter_2/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/Emacs-chapter_1/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/Emacs-chapter_2/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -266,7 +281,7 @@ fallback，导致编辑器变得很卡。</p>
         disqus_loaded = true;
         var disqus_shortname = 'syhsyh9696';
         var disqus_title = '';
-        var disqus_url = '/Emacs-chapter_1/';
+        var disqus_url = '/Emacs-chapter_2/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
