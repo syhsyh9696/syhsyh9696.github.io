@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "我最后还是选择了HHKB",
+      "category" : "SYH的自留地",
+      "tags"     : "Daily",
+      "url"      : "/hhkb-keyboard/",
+      "date"     : "31 Dec 2016"
+    } ,
+  
+    {
       "title"    : "历史的进程 - Emacs配置初篇",
       "category" : "SYH的自留地",
       "tags"     : "Daily",
