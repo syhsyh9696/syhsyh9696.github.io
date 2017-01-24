@@ -5,9 +5,49 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Jan 2017 22:22:15 +0800</pubDate>
-    <lastBuildDate>Tue, 24 Jan 2017 22:22:15 +0800</lastBuildDate>
+    <pubDate>Tue, 24 Jan 2017 23:07:07 +0800</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2017 23:07:07 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>原来2017年已经过去这么多了</title>
+        <description>&lt;h2 id=&quot;又是新一年&quot;&gt;&lt;strong&gt;又是新一年&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;话说从去年十二月份写过一次之后，好像一个月我都没在打开jekyll生成一片新博客，
+又违约了 逃ε=ε=ε=┏(゜ロ゜;)┛&lt;/p&gt;
+
+&lt;p&gt;也是我这段时间实在是没有什么时间写，整本的单词书还有一堆练习等我去啃，摸摸电脑都算奢侈了。
+也就这两天稍微轻松那么一点，写了个信息推送的机器人&lt;a href=&quot;https://telegram.me/ujnblogbot&quot;&gt;@ujnblogbot&lt;/a&gt;,
+基本就是如果我这些好朋友博客如果有了更新的话，就会在上面给我发一条消息。
+整个思路上，是《Ruby Metaprogramming》给了我很大的启发。想用这个服务也很简单啦，
+添加一下然后对它发一条’/start’就可以了。&lt;/p&gt;
+
+&lt;p&gt;对了，自从我熟练的使用了HHKB之后，简直就是行云流水一般，爽到生活不能自理，
+不过那个Backspace确实很奇葩，我现在笔电上的键盘是彻彻底底不会用了，也是很绝望啊！&lt;/p&gt;
+
+&lt;p&gt;要说还有什么别的成绩的话哈哈哈我又在装逼的道路上前进了好远。有一天早上突发奇想在CU海淘了一台
+HP Gen8服务器，等到了我就可以给我的大姐姐们造一个大别墅(Nas)了哈哈哈。
+放心，等到了我一定会照一大堆照片装逼的。&lt;/p&gt;
+
+&lt;p&gt;要说最近我还干了什么的话，就是迷上了新垣结衣，整天看日本电视剧。
+不过新垣结衣真的很耐看啊！那个真野惠里菜也好萌啊！感觉要把她俩加到大别墅里好好保存了哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;话说HHKB的感受我还没写，Emacs也又一大堆东西需要整理，Ruby还要看好多书，
+感觉身体被掏空。这个假还不如不放！&lt;/p&gt;
+
+&lt;p&gt;所以还是脚踏实地一步一步来吧，就这样，万一年前我不再写博客的话，就预祝你&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;鸡年大吉吧&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Jan 2017 16:00:00 +0800</pubDate>
+        <link>http://localhost:4000/New-year/</link>
+        <guid isPermaLink="true">http://localhost:4000/New-year/</guid>
+        
+        <category>Daily</category>
+        
+        
+        <category>SYH的自留地</category>
+        
+      </item>
     
       <item>
         <title>我最后还是选择了HHKB</title>
