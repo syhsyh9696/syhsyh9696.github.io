@@ -18,7 +18,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:title/
 
-
 # html minify
 compress_html:
   clippings: all
@@ -38,13 +37,16 @@ links:
     url: /tags
   - title: about me
     url: /about
+
 # projects in header index
 projects:
   - name: ujnphotobot-telegrambot-ruby
     url: https://github.com/syhsyh9696/ujnphotobot-telegrambot-ruby
   - name: ujn-electromagneticlock-ruby
     url: https://github.com/syhsyh9696/ujn-electromagneticlock-ruby
-  - name: null
-    url: null
+  - name: blog-notification-ruby
+    url: https://github.com/syhsyh9696/blog-notification-ruby
+
 # exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+exclude: ['package.json', 'src', 'node_modules',
+		  'Gemfile', 'Gemfile.lock', 'Rakefile']
