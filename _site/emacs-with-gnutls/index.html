@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>12月的侃山街</title>
-    <meta name="description" content="">
+    <title>Emacs with GnuTLS</title>
+    <meta name="description" content="CS / Ruby / OSU player">
 
     <!-- Google Authorship Markup -->
     <link rel="author" href="https://plus.google.com/?rel=author">
@@ -14,24 +14,24 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@syhsyh9696">
-    <meta name="twitter:title" content="12月的侃山街">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Emacs with GnuTLS">
+    <meta name="twitter:description" content="CS / Ruby / OSU player">
     
-    <meta property="twitter:image:src" content="http://localhost:4000">
+    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/blog-image.png">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/OSU!-keyboard/">
-    <meta property="og:title" content="12月的侃山街">
+    <meta property="og:url" content="http://localhost:4000/emacs-with-gnutls/">
+    <meta property="og:title" content="Emacs with GnuTLS">
     
-    <meta property="og:image" content="http://localhost:4000">
+    <meta property="og:image" content="http://localhost:4000/assets/img/blog-image.png">
     
-    <meta property="og:description" content="">
+    <meta property="og:description" content="CS / Ruby / OSU player">
     <meta property="og:site_name" content="BronyS' Blog">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="12月的侃山街"/>
-    <meta itemprop="description" content="">
+    <meta itemprop="name" content="Emacs with GnuTLS"/>
+    <meta itemprop="description" content="CS / Ruby / OSU player">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -57,7 +57,7 @@
     <meta name="theme-color" content="#5d4d7a">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/OSU!-keyboard/">
+    <link rel="canonical" href="http://localhost:4000/emacs-with-gnutls/">
     <link rel="alternate" type="application/rss+xml" title="BronyS' Blog" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -84,7 +84,7 @@
   
     <ul>
       <li><span>1</span></li>
-      <li><span> /OSU!-keyboard/</span></li>
+      <li><span> /emacs-with-gnutls/</span></li>
       <li><span>⌘ blogspace  λ </span></li>
       <li><span>* Menu</span></li>
     </ul>
@@ -240,60 +240,53 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2016-12-15 17:00:00 +0800">15 Dec 2016</time>
+                    <time itemprop="datePublished" datetime="2017-03-14 13:19:03 +0800">14 Mar 2017</time>
                 </div>
             
-            <h1 class="post-title" itemprop="name">12月的侃山街</h1>
+            <h1 class="post-title" itemprop="name">Emacs with GnuTLS</h1>
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <h2 id="osu触盘计划-中期报告"><strong>OSU!触盘计划-中期报告</strong></h2>
-<p>本来我和<a href="https://github.com/CocherZhang"><strong><em>@Cocher老贼</em></strong></a>
-玩OSU!都是用键盘鼠标的，没想到他居然背叛了组织，并且指法从’标准指法’换成了’兰花指法’,
-我和他印PCB做触盘的计划(JiJi盘 project)就彻底泡汤了。</p>
+                <p><strong>Emacs换源产生的依赖问题</strong></p>
 
-<p>于是找了一个废旧鼠标的PCB板，加上从淘宝买的cherry轴和试轴器，一个硬盘托架，制作成了一个触盘，
-没想到还不错
-<img src="http://7xqbr4.com1.z0.glb.clouddn.com/photo_2016-12-15_22-50-37.jpg" alt="OSU! Keyboard" />
-就是这个玩意，没错键帽(来自宿舍最凶的男人的C87)就是故意装反的。</p>
+<p>Gnu software在windows上总是有一些缺少依赖的问题，
+今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 “GnuTLS library is not found”</p>
 
-<p>我这个触盘成功通过了我的十万次打击测试，而且稳定性非常感人，触发非常的灵敏，这样就不用天天背着我的键盘了。
-话说我那个87键Filco Ninja Majestouch-2真的是沉的我不想再说什么了，
-真的比我的X1-Carbon+充电器还沉……</p>
+<p>然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接，
+而不是调用其他的Terminal app。要触发这个问题的话，也是有一定的条件的。
+原来的源的配置我是直接扔到了</p>
 
-<p>而且有了这个触盘之后名次已经开始涨上来了，原来玩不好就是怪外设红红火火
-<img src="http://7xqbr4.com1.z0.glb.clouddn.com/2016-12-15-Performance.jpg" alt="Performance" /></p>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">custom-set-variables</span><span class="p">)</span></code></pre></figure>
 
-<p>以后要是OSU!又厉害的话我肯定会在tag-OSU!更新的。</p>
+<p>这样是没有任何问题的，只有我使用了新的init-packages.el之后这个问题才会出现
+(源配置移动到packages-list到这个文件)</p>
 
-<h2 id="新键盘计划"><strong>新键盘计划</strong></h2>
-<p>不过最近可能玩的时间就会少很多了，马上要到考试周了，年前还要听母上大人的要求去北京学GRE，也是烦的很啊。
-我觉得为了我的腰我觉得我最近可能要再买一把小一点的键盘了，在外地的话我肯定天天背着书包，87真的是太！沉！了！</p>
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;=</span><span class="w"> </span><span class="n">emacs-major-version</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span><span class="w">
+  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'package</span><span class="p">)</span><span class="w">
+  </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"gnu"</span><span class="w"> </span><span class="nb">.</span><span class="w"> </span><span class="s">"http://elpa.emacs-china.org/gnu/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w">
+  </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"melpa"</span><span class="n">,</span><span class="w"> </span><span class="s">"http://elpa.emacs-china.org/melpa/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w">
+  </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"popkit"</span><span class="w"> </span><span class="nb">.</span><span class="w"> </span><span class="s">"http://elpa.popkit.org/packages/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">))</span></code></pre></figure>
 
-<ul>
-  <li>Poker(太丑)</li>
-  <li>Filco minila (赤)</li>
-  <li>HHKB (professional-2)</li>
-</ul>
+<p>解决起来也是很方便的，不出现各种问题一点也不GNU好不好!</p>
 
-<p>也就只能从后面两个选一个把，如果真买了的话我一定会在我的自留地装逼的恍恍惚惚。
-当然你们如果看了这篇烂文并且有什么意见的话，可以在下面评论，
-或者你觉得哪个键盘好一些也可以评论告诉我，如果采用的话我请你吃饭啊红红火火。</p>
+<p>访问<a href="http://www.gnutls.org/download.html"><strong><em>GnuTLS</em></strong></a> 然后找到针对Windows的预先编译版本，
+解压之后直接将解压后bin文件夹里面的dll文件扔到emacs里的bin文件夹，Done!</p>
 
-<p>最后祝看我吐槽破文章的人-身体健康，再见。</p>
+<p>如果你觉得我扯的太多的话，Emacs offical pages也给了教程你大可以看看
+<a href="https://www.gnu.org/software/emacs/manual/html_mono/emacs-gnutls.html">The site</a></p>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/OSU!-keyboard/%20via%20&#64;syhsyh9696&hashtags=Daily,OSU!,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/emacs-with-gnutls/%20via%20&#64;syhsyh9696&hashtags=Daily,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/OSU!-keyboard/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/emacs-with-gnutls/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/OSU!-keyboard/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/emacs-with-gnutls/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -310,7 +303,7 @@
         disqus_loaded = true;
         var disqus_shortname = 'syhsyh9696';
         var disqus_title = '';
-        var disqus_url = '/OSU!-keyboard/';
+        var disqus_url = '/emacs-with-gnutls/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);

@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Emacs with GnuTLS",
+      "category" : "SYH的自留地",
+      "tags"     : "Daily",
+      "url"      : "/emacs-with-gnutls/",
+      "date"     : "14 Mar 2017"
+    } ,
+  
+    {
       "title"    : "Ruby Array#inject#reduce",
       "category" : "Ruby notes",
       "tags"     : "Ruby",

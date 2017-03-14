@@ -5,9 +5,23 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 21:50:54 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 21:50:54 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 14:33:39 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 14:33:39 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Emacs with GnuTLS</title>
+        <description>&lt;p&gt;&lt;strong&gt;Emacs换源产生的依赖问题&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Gnu software在windows上总是有一些缺少依赖的问题， 今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 “GnuTLS library is not found”&lt;/p&gt; &lt;p&gt;然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接， 而不是调用其他的Terminal app。要触发这个问题的话，也是有一定的条件的。 原来的源的配置我是直接扔到了&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;custom-set-variables&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;这样是没有任何问题的，只有我使用了新的init-packages.el之后这个问题才会出现 (源配置移动到packages-list到这个文件)&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emacs-major-version&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;gnu&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/gnu/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;melpa&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/melpa/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span...</description>
+        <pubDate>Tue, 14 Mar 2017 13:19:03 +0800</pubDate>
+        <link>http://localhost:4000/emacs-with-gnutls/</link>
+        <guid isPermaLink="true">http://localhost:4000/emacs-with-gnutls/</guid>
+        
+        <category>Daily</category>
+        
+        
+        <category>SYH的自留地</category>
+        
+      </item>
     
       <item>
         <title>Ruby Array#inject#reduce</title>
@@ -376,29 +390,6 @@ Linode-Tokyo1机房早就变成传家宝了，价格高的无法接受，退而�
         
         
         <category>折腾纪实</category>
-        
-      </item>
-    
-      <item>
-        <title>第第第第一篇</title>
-        <description>&lt;h2 id=&quot;hexo--jekyll&quot;&gt;&lt;strong&gt;HEXO =&amp;gt; JEKYLL&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;终于搞定了，再再再一次换了Blog框架，这次我保证，一个星期怎么着也会有一篇的
-JEKYLL是ruby写的，我上面的环境啊它好的很啊，就是WSL有点小问题，HEXO就栽在了上面。&lt;/p&gt;
-
-&lt;p&gt;如果想在自己的电脑上预览的话，执行&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;jekyll s --no-watch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;最后的最后，我只想说：ruby不知道比python那一套高到哪里去了 (逃&lt;/p&gt;
-</description>
-        <pubDate>Tue, 13 Sep 2016 09:00:00 +0800</pubDate>
-        <link>http://localhost:4000/new-blog-is-awesome/</link>
-        <guid isPermaLink="true">http://localhost:4000/new-blog-is-awesome/</guid>
-        
-        <category>Daily</category>
-        
-        
-        <category>SYH的自留地</category>
         
       </item>
     
