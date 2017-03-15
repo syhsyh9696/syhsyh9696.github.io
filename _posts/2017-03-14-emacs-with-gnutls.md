@@ -11,7 +11,7 @@ categories:
 
 **Emacs换源产生的依赖问题**
 
-Gnu software在windows上总是有一些缺少依赖的问题，
+Gnu software在Windows上总是有一些缺少依赖的问题，
 今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 "GnuTLS library is not found"
 
 然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接，
