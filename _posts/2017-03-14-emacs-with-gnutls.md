@@ -26,7 +26,7 @@ Gnu software在windows上总是有一些缺少依赖的问题，
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("gnu" . "http://elpa.emacs-china.org/gnu/") t)
-  (add-to-list 'package-archives '("melpa", "http://elpa.emacs-china.org/melpa/") t)
+  (add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
   (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/") t))
 {% endhighlight %}
 
