@@ -150,6 +150,14 @@
     
     <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
         <div class="content">
+            <a href="/ruby-bsearch/">
+                <h2 class="post-title" itemprop="name">Ruby bsearch.md</h2>
+            </a>
+        </div>
+    </article>
+    
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
             <a href="/emacs-with-gnutls/">
                 <h2 class="post-title" itemprop="name">Emacs with GnuTLS.md</h2>
             </a>
@@ -248,7 +256,7 @@
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
                 <p><strong>Emacs换源产生的依赖问题</strong></p>
 
-<p>Gnu software在windows上总是有一些缺少依赖的问题，
+<p>Gnu software在Windows上总是有一些缺少依赖的问题，
 今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 “GnuTLS library is not found”</p>
 
 <p>然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接，
@@ -263,7 +271,7 @@
 <figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;=</span><span class="w"> </span><span class="n">emacs-major-version</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span><span class="w">
   </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'package</span><span class="p">)</span><span class="w">
   </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"gnu"</span><span class="w"> </span><span class="nb">.</span><span class="w"> </span><span class="s">"http://elpa.emacs-china.org/gnu/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w">
-  </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"melpa"</span><span class="n">,</span><span class="w"> </span><span class="s">"http://elpa.emacs-china.org/melpa/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w">
+  </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"melpa"</span><span class="w"> </span><span class="nb">.</span><span class="w"> </span><span class="s">"http://elpa.emacs-china.org/melpa/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w">
   </span><span class="p">(</span><span class="nf">add-to-list</span><span class="w"> </span><span class="ss">'package-archives</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="s">"popkit"</span><span class="w"> </span><span class="nb">.</span><span class="w"> </span><span class="s">"http://elpa.popkit.org/packages/"</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">))</span></code></pre></figure>
 
 <p>解决起来也是很方便的，不出现各种问题一点也不GNU好不好!</p>

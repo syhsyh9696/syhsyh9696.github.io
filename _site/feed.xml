@@ -5,13 +5,27 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Mar 2017 14:33:39 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 14:33:39 +0800</lastBuildDate>
+    <pubDate>Fri, 17 Mar 2017 15:29:19 +0800</pubDate>
+    <lastBuildDate>Fri, 17 Mar 2017 15:29:19 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
+        <title>Ruby bsearch</title>
+        <description>&lt;p&gt;&lt;strong&gt;Ruby Array#bsearch&lt;/strong&gt;&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;最近遇到了很多查询查找的问题，各个方法的效率又天差地别。 Ruby Module#enumerable 提供了很多方法，比如 Array#select Array#reject Array#find Array#bsearch&lt;/p&gt; &lt;p&gt;我看老师天天讲分治法，自然就经常使用典型的Array#bsearch方法了&lt;/p&gt; &lt;p&gt;相比于Array#find要一直找到整个Array的末尾不同， bsearch 方法就相当的快了，复杂度O(log n)，具体实现方法可以看 Ben Lewis’s &lt;a href=&quot;https://fluxusfrequency.github.io/blog/2014/01/31/building-a-binary-search/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt; &lt;p&gt;也可以自己扔到一个脚本里面看看他们之间的差异&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'benchmark'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Benchmark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bm&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;report&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;report&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:bsearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bsearch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;...</description>
+        <pubDate>Fri, 17 Mar 2017 15:01:59 +0800</pubDate>
+        <link>http://localhost:4000/ruby-bsearch/</link>
+        <guid isPermaLink="true">http://localhost:4000/ruby-bsearch/</guid>
+        
+        <category>Ruby</category>
+        
+        
+        <category>Ruby notes</category>
+        
+      </item>
+    
+      <item>
         <title>Emacs with GnuTLS</title>
-        <description>&lt;p&gt;&lt;strong&gt;Emacs换源产生的依赖问题&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Gnu software在windows上总是有一些缺少依赖的问题， 今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 “GnuTLS library is not found”&lt;/p&gt; &lt;p&gt;然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接， 而不是调用其他的Terminal app。要触发这个问题的话，也是有一定的条件的。 原来的源的配置我是直接扔到了&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;custom-set-variables&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;这样是没有任何问题的，只有我使用了新的init-packages.el之后这个问题才会出现 (源配置移动到packages-list到这个文件)&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emacs-major-version&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;gnu&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/gnu/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;melpa&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/melpa/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span...</description>
+        <description>&lt;p&gt;&lt;strong&gt;Emacs换源产生的依赖问题&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Gnu software在Windows上总是有一些缺少依赖的问题， 今天在给Emacs切换Emacs-China的Melpa源的时候有错误产生 “GnuTLS library is not found”&lt;/p&gt; &lt;p&gt;然后查了查，原来是因为Emacs从24版本以后开始直接允许使用GnuTLS库来直接创建TLS网络链接， 而不是调用其他的Terminal app。要触发这个问题的话，也是有一定的条件的。 原来的源的配置我是直接扔到了&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;custom-set-variables&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;这样是没有任何问题的，只有我使用了新的init-packages.el之后这个问题才会出现 (源配置移动到packages-list到这个文件)&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emacs-major-version&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;gnu&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/gnu/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;melpa&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://elpa.emacs-china.org/melpa/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'package-archives&lt;/span&gt;&lt;span...</description>
         <pubDate>Tue, 14 Mar 2017 13:19:03 +0800</pubDate>
         <link>http://localhost:4000/emacs-with-gnutls/</link>
         <guid isPermaLink="true">http://localhost:4000/emacs-with-gnutls/</guid>
@@ -312,84 +326,6 @@ IO类的方法都可以无缝衔接，比如今天写Socket相关应用的时候
         
         
         <category>SYH的自留地</category>
-        
-      </item>
-    
-      <item>
-        <title>Linode-Tokyo2 购入!</title>
-        <description>&lt;h2 id=&quot;bandwagon--linode-tokyo2&quot;&gt;&lt;strong&gt;Bandwagon =&amp;gt; Linode-Tokyo2&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;这个月的Bandwagon真是抽风的厉害，晚上在实验室什么也干不成，而且已经续费了十四个月马上到期，这是前提。&lt;/p&gt;
-
-&lt;p&gt;于是我就比对了一下周围近一些的提供商&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;提供商&lt;/th&gt;
-      &lt;th&gt;位置&lt;/th&gt;
-      &lt;th&gt;优点&lt;/th&gt;
-      &lt;th&gt;缺点&lt;/th&gt;
-      &lt;th&gt;价格&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Bandwagon&lt;/td&gt;
-      &lt;td&gt;US&lt;/td&gt;
-      &lt;td&gt;特别便宜&lt;/td&gt;
-      &lt;td&gt;超售!晚上爆炸&lt;/td&gt;
-      &lt;td&gt;M:2.99$ Y:19.99$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Vultr&lt;/td&gt;
-      &lt;td&gt;JP SG&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;便宜 活动多&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;买的人多线路爆炸&lt;/td&gt;
-      &lt;td&gt;全是活动没法算价格&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Linode&lt;/td&gt;
-      &lt;td&gt;JP SG&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;快&lt;/strong&gt; 稳定 管理强&lt;/td&gt;
-      &lt;td&gt;贵! 也是NTT线路&lt;/td&gt;
-      &lt;td&gt;M:10$ Y:120$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;当看完这几家后，我觉得Vultr强!无敌!就是它了，然后就打开了Speedtest，然后就没有然后了，因为实在是太慢了，
-和B家一样人太多线路太繁忙，于是作罢。&lt;/p&gt;
-
-&lt;p&gt;转念一想，和我一起租用VPS的都是高富帅，我们为什么不搞一个高富帅主机呢？就决定是你了Linode!
-Linode-Tokyo1机房早就变成传家宝了，价格高的无法接受，退而求其次，Linode-Tokyo2也是不错的选择。&lt;/p&gt;
-
-&lt;p&gt;Linode-Tokyo2的配置
-1-CORE|2GB-RAM|24GB-STORTAGE|2TB-TRANSFER&lt;/p&gt;
-
-&lt;h2 id=&quot;配置方法&quot;&gt;&lt;strong&gt;配置方法&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;不安装锐速的话，四个人是一定不能用的，所以安装好CentOS 7和Shadowsocks后第一件事情就是安装锐速&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash serverspeeder-all.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;如果内核是在&lt;a href=&quot;https://www.91yun.org/wp-content/plugins/91yun-serverspeeder/systemlist.html&quot;&gt;支持的内核&lt;/a&gt;里面的话，
-执行上一步就可以了，然而我的内核并不是受到支持的，需要更换VPS的内核。
-这个时候就要请出Linode的后台管理了 强!无敌! 在管理页面里更换成受支持的内核就可以了，锐速一开在Youtube上看1440P的视频都没有问题了。&lt;/p&gt;
-
-&lt;h2 id=&quot;依旧存在的问题&quot;&gt;&lt;strong&gt;依旧存在的问题&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Linode-Tokyo2机房是刚开的，IP是刚广播的，APNIC的数据库还没更新，所以显示的地址还是SG&lt;/p&gt;
-
-&lt;p&gt;再就是Ping值有时候还是高，到了200ms，一般在130ms，希望以后的线路优化能好点，毕竟老牌大厂。&lt;/p&gt;
-
-&lt;p&gt;现在，可以静静看着那些用着Bandwagon的那些人了。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Dec 2016 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Daily-VPS/</link>
-        <guid isPermaLink="true">http://localhost:4000/Daily-VPS/</guid>
-        
-        <category>VPS</category>
-        
-        
-        <category>折腾纪实</category>
         
       </item>
     

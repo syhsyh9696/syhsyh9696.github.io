@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Ruby bsearch",
+      "category" : "Ruby notes",
+      "tags"     : "Ruby",
+      "url"      : "/ruby-bsearch/",
+      "date"     : "17 Mar 2017"
+    } ,
+  
+    {
       "title"    : "Emacs with GnuTLS",
       "category" : "SYH的自留地",
       "tags"     : "Daily",

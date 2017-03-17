@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby神教徒自吹</title>
-    <meta name="description" content="">
+    <title>Ruby bsearch</title>
+    <meta name="description" content="CS / Ruby / OSU player">
 
     <!-- Google Authorship Markup -->
     <link rel="author" href="https://plus.google.com/?rel=author">
@@ -14,24 +14,24 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@syhsyh9696">
-    <meta name="twitter:title" content="Ruby神教徒自吹">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Ruby bsearch">
+    <meta name="twitter:description" content="CS / Ruby / OSU player">
     
-    <meta property="twitter:image:src" content="http://localhost:4000">
+    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/blog-image.png">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/Ruby-now/">
-    <meta property="og:title" content="Ruby神教徒自吹">
+    <meta property="og:url" content="http://localhost:4000/ruby-bsearch/">
+    <meta property="og:title" content="Ruby bsearch">
     
-    <meta property="og:image" content="http://localhost:4000">
+    <meta property="og:image" content="http://localhost:4000/assets/img/blog-image.png">
     
-    <meta property="og:description" content="">
+    <meta property="og:description" content="CS / Ruby / OSU player">
     <meta property="og:site_name" content="BronyS' Blog">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="Ruby神教徒自吹"/>
-    <meta itemprop="description" content="">
+    <meta itemprop="name" content="Ruby bsearch"/>
+    <meta itemprop="description" content="CS / Ruby / OSU player">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -57,7 +57,7 @@
     <meta name="theme-color" content="#5d4d7a">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/Ruby-now/">
+    <link rel="canonical" href="http://localhost:4000/ruby-bsearch/">
     <link rel="alternate" type="application/rss+xml" title="BronyS' Blog" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -84,7 +84,7 @@
   
     <ul>
       <li><span>1</span></li>
-      <li><span> /Ruby-now/</span></li>
+      <li><span> /ruby-bsearch/</span></li>
       <li><span>⌘ blogspace  λ </span></li>
       <li><span>* Menu</span></li>
     </ul>
@@ -248,59 +248,56 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2016-12-06 16:00:00 +0800">06 Dec 2016</time>
+                    <time itemprop="datePublished" datetime="2017-03-17 15:01:59 +0800">17 Mar 2017</time>
                 </div>
             
-            <h1 class="post-title" itemprop="name">Ruby神教徒自吹</h1>
+            <h1 class="post-title" itemprop="name">Ruby bsearch</h1>
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <h2 id="ruby编程有感"><strong>Ruby编程有感</strong></h2>
-<p>又到了吹Ruby的季节了，看完了Ruby的语法介绍加上1/4的Ruby元编程，感觉原来还可以这么优雅的搞自己
-那些玩具程序。用代码生成代码，面向对象更加的纯粹，这一切真的是太棒了。</p>
+                <p><strong>Ruby Array#bsearch</strong></p>
 
-<p>就拿Ruby的IO类来说吧，无论是Socket类还是RS232接口的相关gem，很多都是从IO类继承过来的，所有的
-IO类的方法都可以无缝衔接，比如今天写Socket相关应用的时候</p>
+<hr />
+<p>最近遇到了很多查询查找的问题，各个方法的效率又天差地别。
+Ruby Module#enumerable 提供了很多方法，比如
+Array#select Array#reject Array#find Array#bsearch</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">server</span> <span class="o">=</span> <span class="no">TCPServer</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="mi">22000</span><span class="p">)</span>
-<span class="no">Thread</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">server</span><span class="p">.</span><span class="nf">accept</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">client</span><span class="o">|</span>
-    <span class="nb">p</span> <span class="n">client</span><span class="p">.</span><span class="nf">gets</span>
-    <span class="n">client</span><span class="p">.</span><span class="nf">puts</span><span class="p">(</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">ctime</span><span class="p">)</span>
+<p>我看老师天天讲分治法，自然就经常使用典型的Array#bsearch方法了</p>
+
+<p>相比于Array#find要一直找到整个Array的末尾不同， bsearch
+方法就相当的快了，复杂度O(log n)，具体实现方法可以看
+Ben Lewis’s
+<a href="https://fluxusfrequency.github.io/blog/2014/01/31/building-a-binary-search/">Blog</a></p>
+
+<p>也可以自己扔到一个脚本里面看看他们之间的差异</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'benchmark'</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">20000000</span><span class="p">)</span>
+
+<span class="no">Benchmark</span><span class="p">.</span><span class="nf">bm</span> <span class="k">do</span> <span class="o">|</span><span class="nb">test</span><span class="o">|</span>
+    <span class="nb">test</span><span class="p">.</span><span class="nf">report</span><span class="p">(</span><span class="ss">:find</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10000000</span> <span class="p">}</span> <span class="p">}</span>
+	<span class="nb">test</span><span class="p">.</span><span class="nf">report</span><span class="p">(</span><span class="ss">:bsearch</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">.</span><span class="nf">bsearch</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10000000</span> <span class="p">}</span> <span class="p">}</span>
 <span class="k">end</span></code></pre></figure>
 
-<p>写出这些完全不用看Rdocs，都是凭着感觉写出来的没有任何问题。同样的Ruby操作Linux下/dev的设备的时
-，有的方法也是完全共通的。万物皆对象这是我最喜欢的。</p>
+<p>反正在我这里，bsearch的方法是要比find快非常的多。
+这样Leetcode里面的很多题目就可以用这个方法给题目加速了。</p>
 
-<p>最后再牢骚两句，Ruby在web方面和一些直接操作硬件的方面造诣真的挺深的，OOP也更纯粹，所谓的性能不足在现在来说根本就不是问题，不要总是拿C#或者Java这种高级武器去面对几百行解决的问题，杀鸡焉用牛刀？</p>
-
-<p>也是因为ujn-electromagneticlock-ruby这个项目，从被喷的狗屁不如到现在基本功能基本完善和相关
-模块不断增加，我觉得这个过程中我也学到了不少。喷稳定性我加了不少稳定性的方法，喷数据不稳定便链接
-到远端的服务器等等，反正我做出过什么东西从来都是在被喷中不断完善也早就习惯了。同样也要感谢@WangSq
-花了那么多时间给我做硬件那块。</p>
-
-<p>下一步我抽一点时间写学一部分关于ROR的相关知识争取搞一套实验室的信息综合分发网站一类的吧，让实验室变得
-智能化一点，要不实在是太Low了。</p>
-
-<p>还有就是好想买手办啊 东条希 松浦果南 星空凛 南琴梨 还有Filco minila air，是时候攒钱了。</p>
-
-<p>最后</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">"Ruby"</span>
-<span class="nb">puts</span> <span class="s2">"Think elegant."</span></code></pre></figure>
-
+<p>不过bsearch方法也是有一定缺点的，要求数组一定是要排序后的数组才行,
+如果要找的数字在整个数组的最后面，好像性能也没什么差别了。</p>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/Ruby-now/%20via%20&#64;syhsyh9696&hashtags=Ruby,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/ruby-bsearch/%20via%20&#64;syhsyh9696&hashtags=Ruby,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Ruby-now/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ruby-bsearch/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/Ruby-now/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/ruby-bsearch/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -317,7 +314,7 @@ IO类的方法都可以无缝衔接，比如今天写Socket相关应用的时候
         disqus_loaded = true;
         var disqus_shortname = 'syhsyh9696';
         var disqus_title = '';
-        var disqus_url = '/Ruby-now/';
+        var disqus_url = '/ruby-bsearch/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
