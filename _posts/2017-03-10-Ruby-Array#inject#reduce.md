@@ -11,6 +11,7 @@ categories:
 ---
 
 **Array#inject#reduce其实是一回事**
+---
 
 其实reduce是一个inject的别名，两者的能实现一样的功能，但我觉得reduce更好理解一些。
 
