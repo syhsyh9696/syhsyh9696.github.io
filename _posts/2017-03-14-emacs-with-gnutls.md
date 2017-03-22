@@ -30,7 +30,7 @@ Gnu software在Windows上总是有一些缺少依赖的问题，
   (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/") t))
 {% endhighlight %}
 
-解决起来也是很方便的，不出现各种问题一点也不GNU好不好!
+解决起来也是很方便的，不出现各种问题一点也不GNU好不好! 
 
 访问[***GnuTLS***](http://www.gnutls.org/download.html) 然后找到针对Windows的预先编译版本，
 解压之后直接将解压后bin文件夹里面的dll文件扔到emacs里的bin文件夹，Done!
