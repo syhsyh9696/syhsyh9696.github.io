@@ -265,12 +265,12 @@ Array#select Array#reject Array#find Array#bsearch</p>
 
 <p>相比于Array#find要一直找到整个Array的末尾不同， bsearch
 方法就相当的快了，复杂度O(log n)，具体实现方法可以看
-Ben Lewis’s 
+Ben Lewis’s
 <a href="https://fluxusfrequency.github.io/blog/2014/01/31/building-a-binary-search/">Blog</a></p>
 
 <p>也可以自己扔到一个脚本里面看看他们之间的差异</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'benchmark'</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'benchmark'</span> 
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">20000000</span><span class="p">)</span>
 
