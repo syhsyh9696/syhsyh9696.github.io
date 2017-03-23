@@ -13,7 +13,7 @@ categories:
 **Array#inject#reduce其实是一回事**
 ---
 
-其实reduce是一个inject的别名，两者的能实现一样的功能，但我觉得reduce更好理解一些。
+其实reduce是一个inject的别名，两者的能实现一样的功能，但我觉得reduce更好理解一些。 
 
 这两个方法在[Leetcode 17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 里可以用到，具体的实现方法(我更喜欢reduce这个叫法)
