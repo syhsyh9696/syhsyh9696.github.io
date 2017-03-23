@@ -13,7 +13,7 @@ categories:
 
 ---
 最近遇到了很多查询查找的问题，各个方法的效率又天差地别。
-Ruby Module#enumerable 提供了很多方法，比如
+Ruby Module#enumerable 提供了很多方法，比如 
 Array#select Array#reject Array#find Array#bsearch
 
 我看老师天天讲分治法，自然就经常使用典型的Array#bsearch方法了
@@ -25,7 +25,7 @@ Ben Lewis's
 
 也可以自己扔到一个脚本里面看看他们之间的差异
 {% highlight ruby %}
-require 'benchmark' 
+require 'benchmark'
 
 data = (0..20000000)
 
