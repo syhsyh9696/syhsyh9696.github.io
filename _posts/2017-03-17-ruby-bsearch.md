@@ -28,7 +28,7 @@ Ben Lewis's
 require 'benchmark'
 
 data = (0..20000000)
-
+   
 Benchmark.bm do |test|
     test.report(:find) { data.find { |num| num > 10000000 } }
 	test.report(:bsearch) { data.bsearch { |num| num > 10000000 } }
