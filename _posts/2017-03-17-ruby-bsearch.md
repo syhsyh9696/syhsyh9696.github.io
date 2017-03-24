@@ -13,7 +13,7 @@ categories:
 
 ---
 最近遇到了很多查询查找的问题，各个方法的效率又天差地别。
-Ruby Module#enumerable 提供了很多方法，比如 
+Ruby Module#enumerable 提供了很多方法，比如
 Array#select Array#reject Array#find Array#bsearch
 
 我看老师天天讲分治法，自然就经常使用典型的Array#bsearch方法了
@@ -28,7 +28,7 @@ Ben Lewis's
 require 'benchmark'
 
 data = (0..20000000)
-   
+
 Benchmark.bm do |test|
     test.report(:find) { data.find { |num| num > 10000000 } }
 	test.report(:bsearch) { data.bsearch { |num| num > 10000000 } }

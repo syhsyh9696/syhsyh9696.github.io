@@ -258,7 +258,7 @@
 
 <hr />
 <p>最近遇到了很多查询查找的问题，各个方法的效率又天差地别。
-Ruby Module#enumerable 提供了很多方法，比如 
+Ruby Module#enumerable 提供了很多方法，比如
 Array#select Array#reject Array#find Array#bsearch</p>
 
 <p>我看老师天天讲分治法，自然就经常使用典型的Array#bsearch方法了</p>
@@ -273,7 +273,7 @@ Ben Lewis’s
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'benchmark'</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">20000000</span><span class="p">)</span>
-   
+
 <span class="no">Benchmark</span><span class="p">.</span><span class="nf">bm</span> <span class="k">do</span> <span class="o">|</span><span class="nb">test</span><span class="o">|</span>
     <span class="nb">test</span><span class="p">.</span><span class="nf">report</span><span class="p">(</span><span class="ss">:find</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10000000</span> <span class="p">}</span> <span class="p">}</span>
 	<span class="nb">test</span><span class="p">.</span><span class="nf">report</span><span class="p">(</span><span class="ss">:bsearch</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">.</span><span class="nf">bsearch</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10000000</span> <span class="p">}</span> <span class="p">}</span>
