@@ -5,9 +5,23 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Mar 2017 19:41:12 +0800</pubDate>
-    <lastBuildDate>Fri, 24 Mar 2017 19:41:12 +0800</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2017 20:08:41 +0800</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2017 20:08:41 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Ruby Block</title>
+        <description>&lt;p&gt;&lt;strong&gt;Ruby Blocks&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;代码块在Ruby中也是可以传递的，这很tricky，比如&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; 7&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;当然可以询问当前的方法调用是否包含块，可以通过方法Kernel#block_given?方法得到&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;代码块是闭包&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;代码块可以偷偷的吧变量带出原来的作用域。 可以运行的代码由两部分组成:代码和一组绑定，绑定在代码块结束的时候就消失了， 基于这种特性，代码块被称为闭包，就是说，代码块可以获取局部绑定并一直带着他们。&lt;/p&gt; &lt;p&gt;跟Java那些语言不同的是，Ruby并没有内部作用域(inner scope)或者外部作用域(outer scope) 这种概念，Ruby的作用域并不是嵌套的而是截然分开的，一旦进入到一个新的作用域中， 整组绑定都会被替换掉，比如&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyClassnn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;local_variables&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; [:v2]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span...</description>
+        <pubDate>Mon, 27 Mar 2017 22:46:50 +0800</pubDate>
+        <link>http://localhost:4000/ruby-block/</link>
+        <guid isPermaLink="true">http://localhost:4000/ruby-block/</guid>
+        
+        <category>Ruby</category>
+        
+        
+        <category>Ruby notes</category>
+        
+      </item>
     
       <item>
         <title>Ruby bsearch</title>
@@ -276,53 +290,6 @@ fallback，导致编辑器变得很卡。&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/Emacs-chapter_1/</guid>
         
         <category>Daily</category>
-        
-        
-        <category>SYH的自留地</category>
-        
-      </item>
-    
-      <item>
-        <title>Ruby神教徒自吹</title>
-        <description>&lt;h2 id=&quot;ruby编程有感&quot;&gt;&lt;strong&gt;Ruby编程有感&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;又到了吹Ruby的季节了，看完了Ruby的语法介绍加上1/4的Ruby元编程，感觉原来还可以这么优雅的搞自己
-那些玩具程序。用代码生成代码，面向对象更加的纯粹，这一切真的是太棒了。&lt;/p&gt;
-
-&lt;p&gt;就拿Ruby的IO类来说吧，无论是Socket类还是RS232接口的相关gem，很多都是从IO类继承过来的，所有的
-IO类的方法都可以无缝衔接，比如今天写Socket相关应用的时候&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TCPServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;22000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gets&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;puts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ctime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;写出这些完全不用看Rdocs，都是凭着感觉写出来的没有任何问题。同样的Ruby操作Linux下/dev的设备的时
-，有的方法也是完全共通的。万物皆对象这是我最喜欢的。&lt;/p&gt;
-
-&lt;p&gt;最后再牢骚两句，Ruby在web方面和一些直接操作硬件的方面造诣真的挺深的，OOP也更纯粹，所谓的性能不足在现在来说根本就不是问题，不要总是拿C#或者Java这种高级武器去面对几百行解决的问题，杀鸡焉用牛刀？&lt;/p&gt;
-
-&lt;p&gt;也是因为ujn-electromagneticlock-ruby这个项目，从被喷的狗屁不如到现在基本功能基本完善和相关
-模块不断增加，我觉得这个过程中我也学到了不少。喷稳定性我加了不少稳定性的方法，喷数据不稳定便链接
-到远端的服务器等等，反正我做出过什么东西从来都是在被喷中不断完善也早就习惯了。同样也要感谢@WangSq
-花了那么多时间给我做硬件那块。&lt;/p&gt;
-
-&lt;p&gt;下一步我抽一点时间写学一部分关于ROR的相关知识争取搞一套实验室的信息综合分发网站一类的吧，让实验室变得
-智能化一点，要不实在是太Low了。&lt;/p&gt;
-
-&lt;p&gt;还有就是好想买手办啊 东条希 松浦果南 星空凛 南琴梨 还有Filco minila air，是时候攒钱了。&lt;/p&gt;
-
-&lt;p&gt;最后&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ruby&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Think elegant.&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Tue, 06 Dec 2016 16:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Ruby-now/</link>
-        <guid isPermaLink="true">http://localhost:4000/Ruby-now/</guid>
-        
-        <category>Ruby</category>
         
         
         <category>SYH的自留地</category>

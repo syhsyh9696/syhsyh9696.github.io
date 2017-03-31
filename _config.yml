@@ -50,3 +50,6 @@ projects:
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules',
 		  'Gemfile', 'Gemfile.lock', 'Rakefile']
+
+jekyll-archives:
+    enabled: ['categories', 'year']

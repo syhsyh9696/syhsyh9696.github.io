@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Ruby Block",
+      "category" : "Ruby notes",
+      "tags"     : "Ruby",
+      "url"      : "/ruby-block/",
+      "date"     : "27 Mar 2017"
+    } ,
+  
+    {
       "title"    : "Ruby bsearch",
       "category" : "Ruby notes",
       "tags"     : "Ruby",

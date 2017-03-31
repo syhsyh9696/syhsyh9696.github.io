@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby的集合遍历</title>
-    <meta name="description" content="">
+    <title>Ruby Block</title>
+    <meta name="description" content="CS / Ruby / OSU player">
 
     <!-- Google Authorship Markup -->
     <link rel="author" href="https://plus.google.com/?rel=author">
@@ -14,24 +14,24 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@syhsyh9696">
-    <meta name="twitter:title" content="Ruby的集合遍历">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Ruby Block">
+    <meta name="twitter:description" content="CS / Ruby / OSU player">
     
-    <meta property="twitter:image:src" content="http://localhost:4000">
+    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/blog-image.png">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/Ruby-traversal/">
-    <meta property="og:title" content="Ruby的集合遍历">
+    <meta property="og:url" content="http://localhost:4000/ruby-block/">
+    <meta property="og:title" content="Ruby Block">
     
-    <meta property="og:image" content="http://localhost:4000">
+    <meta property="og:image" content="http://localhost:4000/assets/img/blog-image.png">
     
-    <meta property="og:description" content="">
+    <meta property="og:description" content="CS / Ruby / OSU player">
     <meta property="og:site_name" content="BronyS' Blog">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="Ruby的集合遍历"/>
-    <meta itemprop="description" content="">
+    <meta itemprop="name" content="Ruby Block"/>
+    <meta itemprop="description" content="CS / Ruby / OSU player">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -57,7 +57,7 @@
     <meta name="theme-color" content="#5d4d7a">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/Ruby-traversal/">
+    <link rel="canonical" href="http://localhost:4000/ruby-block/">
     <link rel="alternate" type="application/rss+xml" title="BronyS' Blog" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -84,7 +84,7 @@
   
     <ul>
       <li><span>1</span></li>
-      <li><span> /Ruby-traversal/</span></li>
+      <li><span> /ruby-block/</span></li>
       <li><span>⌘ blogspace  λ </span></li>
       <li><span>* Menu</span></li>
     </ul>
@@ -256,96 +256,143 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2016-12-10 17:00:00 +0800">10 Dec 2016</time>
+                    <time itemprop="datePublished" datetime="2017-03-27 22:46:50 +0800">27 Mar 2017</time>
                 </div>
             
-            <h1 class="post-title" itemprop="name">Ruby的集合遍历</h1>
+            <h1 class="post-title" itemprop="name">Ruby Block</h1>
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <h2 id="ruby的遍历方法"><strong>Ruby的遍历方法</strong></h2>
+                <p><strong>Ruby Blocks</strong></p>
 
-<p>因为最近经常需要用到集合的遍历，看完镐头书(Ruby Programming)
-相关章节后总结下常见的方法。</p>
+<p>代码块在Ruby中也是可以传递的，这很tricky，比如</p>
 
-<p><strong><em>each</em></strong>
-基本上来说就是处于取代了for的作用，当你需要迭代一个集合的时候
-each都是可以的选择，而且each比for方便很多</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
-    <span class="c1"># Do something
-</span>
-<span class="k">end</span></code></pre></figure>
-
-<p><strong><em>map</em></strong>
-和each的作用大概相同，最大的不同就是map会将处理后的结果返回，
-省了temp一类的中间变量</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}</span>
-<span class="c1"># Return [2, 4, 6]
-</span>
-
-<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:upcase</span><span class="p">)</span>
-<span class="c1"># Return ['A', 'B', 'C']</span></code></pre></figure>
-
-<p><strong><em>select</em></strong>
-从前向后的迭代计算计算结果为true的元素，当作正向的filter</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
-<span class="c1"># Return [2, 4]</span></code></pre></figure>
-
-<p><strong><em>reject</em></strong>
-与select结果相反，可以看作反方向filter，返回结果为false的元素</p>
-
-<p><strong><em>partition</em></strong>
-根据传入的代码块中条件，把集合结果分为两部分:满足条件true和false
-类似同时应用了select和reject</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
-<span class="c1"># Return [[2, 4], [3, 5]]</span></code></pre></figure>
-
-<p><strong><em>find</em></strong>
-正向查找满足条件的第一个值，并作为结果返回 如果想查询所有的同类值的话，find是无效的</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">].</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="p">}</span>
-<span class="c1"># Return 5</span></code></pre></figure>
-
-<p><strong><em>all?</em></strong>
-通过迭代判断某个集合是否满足传代码块的所给条件，只有都满足返回true，否则返回false</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">].</span><span class="nf">all?</span><span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span><span class="p">.</span><span class="nf">even?</span> <span class="p">}</span>
-<span class="c1"># Return true</span></code></pre></figure>
-
-<p><strong><em>any?</em></strong>
-集合内有一个满足条件就返回true,代码同all</p>
-
-<p><strong><em>each_with_index</em></strong>
-在遍历的时候可以给出元素的下标位置</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">].</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-    <span class="c1"># Do something
-</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">test_method</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+	<span class="n">a</span> <span class="o">+</span> <span class="k">yield</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">].</span><span class="nf">map</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
-    <span class="c1"># Do something
-</span>
+<span class="n">test_method</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">|</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="p">}</span>
+<span class="c1"># =&gt; 7</span></code></pre></figure>
+
+<p>当然可以询问当前的方法调用是否包含块，可以通过方法Kernel#block_given?方法得到</p>
+
+<p><strong>Scope</strong></p>
+
+<p><strong><em>代码块是闭包</em></strong></p>
+
+<p>代码块可以偷偷的吧变量带出原来的作用域。
+可以运行的代码由两部分组成:代码和一组绑定，绑定在代码块结束的时候就消失了，
+基于这种特性，代码块被称为闭包，就是说，代码块可以获取局部绑定并一直带着他们。</p>
+
+<p>跟Java那些语言不同的是，Ruby并没有内部作用域(inner scope)或者外部作用域(outer scope)
+这种概念，Ruby的作用域并不是嵌套的而是截然分开的，一旦进入到一个新的作用域中，
+整组绑定都会被替换掉，比如</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">MyClassnn</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="mi">2</span>				
+	<span class="nb">local_variables</span>		<span class="c1"># =&gt; [:v2]</span>
+	<span class="k">def</span> <span class="nf">my_method</span>
+		<span class="n">v3</span> <span class="o">=</span> <span class="mi">3</span>
+		<span class="nb">local_variables</span>
+	<span class="k">end</span>
+	<span class="nb">local_variables</span>		<span class="c1"># =&gt; [:v2]</span>
+<span class="k">end</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="no">MyClass</span><span class="p">.</span><span class="nf">new</span> 
+<span class="n">obj</span><span class="p">.</span><span class="nf">my_method</span>			<span class="c1"># =&gt; [:v3]</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">my_method</span>			<span class="c1"># =&gt; [:v3]</span>
+<span class="nb">local_variables</span>			<span class="c1"># =&gt; [:v1, :obj]</span></code></pre></figure>
+
+<p>这就意味着一旦进入到class的定义当中，v1就落在作用域范围之外，从而变得不可见了。
+并且在调用my_method过程中，两个v3是完全不同的。
+这就说明了，无论何时切换了作用域，有些绑定会被新的绑定所取代，
+当然并不是对所有的绑定都是这样。</p>
+
+<p><strong>Scope Gate</strong></p>
+
+<p>程序会在三个地方关闭前一个作用域，同时打开一个新作用域</p>
+<ul>
+  <li>类定义</li>
+  <li>模块定义</li>
+  <li>方法</li>
+</ul>
+
+<p>因此用class, module, def关键字作为标记，每个关键字都对应一个作用域门。</p>
+
+<p><strong>Flattening the Scope</strong></p>
+
+<p>比如下面的</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
+<span class="k">class</span> <span class="nc">MyClass</span>
+	  <span class="c1"># 希望这里打印my_var</span>
+
+	  <span class="k">def</span> <span class="nf">my_method</span>
+	  	  <span class="c1"># 希望在这里打印my_var</span>
+	  <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
-<p>还有的其他用法，类似while for loop until太简单了就不用说了</p>
+<p>因为是类的定义，my_var并不能穿越，只有将class关键字替换某个
+非作用域门的东西，比如方法调用才有可能获得my_var的值。</p>
+
+<p>Ruby的文档中，Class.new是class的完美替身。用代码块传递
+给Class.new，还不是美滋滋，真OO无双</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
+<span class="no">MyClass</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+		<span class="c1"># my_var在这里可见</span>
+		<span class="nb">p</span> <span class="n">my_var</span>
+
+		<span class="k">def</span> <span class="nf">my_method</span>
+			<span class="c1"># 暂时在这里不可见的my_var</span>
+		<span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>居然还不到my_method，都是def的锅，换!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
+<span class="no">MyClass</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+		<span class="nb">p</span> <span class="n">my_var</span>
+
+		<span class="n">define_method</span> <span class="ss">:my_mythod</span> <span class="k">do</span>
+		    <span class="s2">"</span><span class="si">#{</span><span class="n">my_var</span><span class="si">}</span><span class="s2"> in the method"</span>
+		<span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>诚心默念动态方法大法好(逃</p>
+
+<p>好了扁平作用域见过了，如果想在方法间共享变量又不想其他方法访问，
+就可以把这些方法定义在变量的扁平作用域中，这次来用动态派发</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">define_method</span>
+	<span class="n">share</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="no">Kernel</span><span class="p">.</span><span class="nf">send</span> <span class="ss">:define_method</span><span class="p">,</span> <span class="ss">:function_f</span> <span class="k">do</span>
+		<span class="n">share</span>
+	<span class="k">end</span>
+
+	<span class="no">Kernel</span><span class="p">.</span><span class="nf">send</span> <span class="ss">:define_method</span><span class="p">,</span> <span class="ss">:function_s</span> <span class="k">do</span>
+		<span class="n">share</span> <span class="o">+=</span> <span class="mi">1</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+<span class="n">define_method</span></code></pre></figure>
+
+<p>share这个变量被层层的作用域门保护着，所以这个方法叫做共享作用域。</p>
+
+<p>所以今天先到这里吧(逃</p>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/Ruby-traversal/%20via%20&#64;syhsyh9696&hashtags=Ruby,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/ruby-block/%20via%20&#64;syhsyh9696&hashtags=Ruby,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/Ruby-traversal/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ruby-block/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/Ruby-traversal/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/ruby-block/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -362,7 +409,7 @@ each都是可以的选择，而且each比for方便很多</p>
         disqus_loaded = true;
         var disqus_shortname = 'syhsyh9696';
         var disqus_title = '';
-        var disqus_url = '/Ruby-traversal/';
+        var disqus_url = '/ruby-block/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
