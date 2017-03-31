@@ -5,9 +5,23 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Mar 2017 20:26:26 +0800</pubDate>
-    <lastBuildDate>Fri, 31 Mar 2017 20:26:26 +0800</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2017 23:20:29 +0800</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2017 23:20:29 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Emacs 配置文件格式化</title>
+        <description>&lt;p&gt;&lt;strong&gt;纯属吃饱了撑的&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;反正那个爬虫一时半会做不出来，还是来折腾一下emacs吧。 要说最近看什么不爽，就是看那个长长的&lt;strong&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/strong&gt;非常的不爽， 里面堆满了各种&lt;/p&gt; &lt;ul&gt; &lt;li&gt;自动生成的custom代码&lt;/li&gt; &lt;li&gt;package源配置代码&lt;/li&gt; &lt;li&gt;各种mode开启关闭&lt;/li&gt; &lt;li&gt;各种键位的自定义&lt;/li&gt; &lt;li&gt;ui的自定义&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;够了！邪魔退散！开始拆分。&lt;/p&gt; &lt;p&gt;长长的配置文件重新分为几类保存在 ~/.emacs.d/lisp，&lt;/p&gt; &lt;ul&gt; &lt;li&gt;custom.el 主要保存自动生成的custom代码&lt;/li&gt; &lt;li&gt;init-better-defaults.el 模式的开关&lt;/li&gt; &lt;li&gt;init-keybindings.el 键位设置&lt;/li&gt; &lt;li&gt;init-org.el org模式相关配置&lt;/li&gt; &lt;li&gt;init-packages.el package源配置和自动安装函数定义&lt;/li&gt; &lt;li&gt;init-ui.el 工具栏或者主题设置&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;好了拆分完成，下一步就是在init.el中引用调用了。 首先指定你的配置文件保存在哪个位置，emacs会找到那个文件夹 并索引文件，这一步用 &lt;strong&gt;&lt;em&gt;(add-to-list load-path “FILL_IN”)&lt;/em&gt;&lt;/strong&gt;搞定。 之后就是require相关设置增加相应的功能，不过这一步一定不要包括 &lt;strong&gt;&lt;em&gt;custom.el&lt;/em&gt;&lt;/strong&gt;文件，要单独处理这个大麻烦。&lt;/p&gt; &lt;p&gt;最后就是load custom variable，需要set一个变量， 用&lt;strong&gt;&lt;em&gt;(setq custom-file)&lt;/em&gt;&lt;/strong&gt;搞定并在最后load一下搞定。&lt;/p&gt; &lt;p&gt;具体的实现方法&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;package-initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'load-path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/lisp/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;;; Set F2 to open init.el &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open-my-init-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find-file&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/init.el&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;;; add more personal func &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span...</description>
+        <pubDate>Fri, 31 Mar 2017 22:56:28 +0800</pubDate>
+        <link>http://localhost:4000/emacs-config-file-format/</link>
+        <guid isPermaLink="true">http://localhost:4000/emacs-config-file-format/</guid>
+        
+        <category>Daily</category>
+        
+        
+        <category>SYH的自留地</category>
+        
+      </item>
     
       <item>
         <title>Ruby Block</title>
@@ -257,42 +271,6 @@ HP Gen8服务器，等到了我就可以给我的大姐姐们造一个大别墅(
         
         
         <category>Ruby notes</category>
-        
-      </item>
-    
-      <item>
-        <title>历史的进程 - Emacs学习初篇</title>
-        <description>&lt;h2 id=&quot;the-editor-of-gods&quot;&gt;&lt;strong&gt;The Editor of God’s&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Atom.AlwaysBug?()&lt;/p&gt;
-
-&lt;p&gt;Atom又一次抽风了，这一次是如果不外接显示器的话，
-它是默认在屏幕显示外面的而且根本拖动不回来。
-加之Sublime的输入法漂移，我能怎么办，我也很绝望啊。&lt;/p&gt;
-
-&lt;p&gt;于是，我就打开了在我电脑存放了很长时间的Emacs 25.1-The Editor of God’s。
-初次上手Emacs很不习惯，所有的命令都和Ctrl挂钩，而且x1-carbon的ctrl在一个很奇怪的位置。
-没过一会Emacs卡的不行，找了半天原因发现原来是Emacs用一种韩文字体显示中文，所以一直在
-fallback，导致编辑器变得很卡。&lt;/p&gt;
-
-&lt;p&gt;所以安装好Emacs之后一定要做的 (Windows)&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;更换一个字体&lt;/li&gt;
-  &lt;li&gt;更换ctrl和capslock(如果你的手不想疼的话)&lt;/li&gt;
-  &lt;li&gt;如果用WSL的话，在’.bashrc’或者’.zshrc’加上这么一条 alias vim=’emacs’(心无旁骛 逃&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;因为很看好在Emacs下可以收发邮件，所以在vim和Emacs中选择了Emacs，等看完所有的教程再
-写一篇常用的命令集合，命令太多了根本记不住。&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 10 Dec 2016 16:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Emacs-chapter_1/</link>
-        <guid isPermaLink="true">http://localhost:4000/Emacs-chapter_1/</guid>
-        
-        <category>Daily</category>
-        
-        
-        <category>SYH的自留地</category>
         
       </item>
     

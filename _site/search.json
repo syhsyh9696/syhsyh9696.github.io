@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Emacs 配置文件格式化",
+      "category" : "SYH的自留地",
+      "tags"     : "Daily",
+      "url"      : "/emacs-config-file-format/",
+      "date"     : "31 Mar 2017"
+    } ,
+  
+    {
       "title"    : "Ruby Block",
       "category" : "Ruby notes",
       "tags"     : "Ruby",
