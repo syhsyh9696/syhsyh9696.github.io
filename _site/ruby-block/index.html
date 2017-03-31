@@ -270,8 +270,7 @@
 	<span class="n">a</span> <span class="o">+</span> <span class="k">yield</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="n">test_method</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">|</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="p">}</span>
-<span class="c1"># =&gt; 7</span></code></pre></figure>
+<span class="n">test_method</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">|</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="p">}</span>    <span class="c1"># =&gt; 7</span></code></pre></figure>
 
 <p>当然可以询问当前的方法调用是否包含块，可以通过方法Kernel#block_given?方法得到</p>
 
@@ -324,11 +323,11 @@
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
 <span class="k">class</span> <span class="nc">MyClass</span>
-	  <span class="c1"># 希望这里打印my_var</span>
+        <span class="c1"># 希望这里打印my_var</span>
 
-	  <span class="k">def</span> <span class="nf">my_method</span>
-	  	  <span class="c1"># 希望在这里打印my_var</span>
-	  <span class="k">end</span>
+	<span class="k">def</span> <span class="nf">my_method</span>
+		<span class="c1"># 希望在这里打印my_var</span>
+	<span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>因为是类的定义，my_var并不能穿越，只有将class关键字替换某个
@@ -339,23 +338,23 @@
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
 <span class="no">MyClass</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-		<span class="c1"># my_var在这里可见</span>
-		<span class="nb">p</span> <span class="n">my_var</span>
+	<span class="c1"># my_var在这里可见</span>
+	<span class="nb">p</span> <span class="n">my_var</span>
 
-		<span class="k">def</span> <span class="nf">my_method</span>
-			<span class="c1"># 暂时在这里不可见的my_var</span>
-		<span class="k">end</span>
+	<span class="k">def</span> <span class="nf">my_method</span>
+		<span class="c1"># 暂时在这里不可见的my_var</span>
+	<span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>居然还不到my_method，都是def的锅，换!</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_var</span> <span class="o">=</span> <span class="s2">"test"</span>
 <span class="no">MyClass</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-		<span class="nb">p</span> <span class="n">my_var</span>
+	<span class="nb">p</span> <span class="n">my_var</span>
 
-		<span class="n">define_method</span> <span class="ss">:my_mythod</span> <span class="k">do</span>
-		    <span class="s2">"</span><span class="si">#{</span><span class="n">my_var</span><span class="si">}</span><span class="s2"> in the method"</span>
-		<span class="k">end</span>
+	<span class="n">define_method</span> <span class="ss">:my_mythod</span> 
+		<span class="s2">"</span><span class="si">#{</span><span class="n">my_var</span><span class="si">}</span><span class="s2"> in the method"</span>
+	<span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>诚心默念动态方法大法好(逃</p>

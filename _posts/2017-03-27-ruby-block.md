@@ -17,8 +17,7 @@ def test_method(a, b)
 	a + yield(a, b)
 end
 
-test_method(2, 3) { |x, y| x + y }
-# => 7
+test_method(2, 3) { |x, y| x + y }    # => 7
 {% endhighlight %}
 当然可以询问当前的方法调用是否包含块，可以通过方法Kernel#block_given?方法得到
 
@@ -69,11 +68,11 @@ local_variables			# => [:v1, :obj]
 {% highlight ruby%}
 my_var = "test"
 class MyClass
-	  # 希望这里打印my_var
+        # 希望这里打印my_var
 
-	  def my_method
-	  	  # 希望在这里打印my_var
-	  end
+	def my_method
+		# 希望在这里打印my_var
+	end
 end
 {% endhighlight %}
 因为是类的定义，my_var并不能穿越，只有将class关键字替换某个
@@ -84,23 +83,23 @@ Ruby的文档中，Class.new是class的完美替身。用代码块传递
 {% highlight ruby %}
 my_var = "test"
 MyClass = Class.new do
-		# my_var在这里可见
-		p my_var
+	# my_var在这里可见
+	p my_var
 
-		def my_method
-			# 暂时在这里不可见的my_var
-		end
+	def my_method
+		# 暂时在这里不可见的my_var
+	end
 end
 {% endhighlight %}
 居然还不到my_method，都是def的锅，换!
 {% highlight ruby %}
 my_var = "test"
 MyClass = Class.new do
-		p my_var
+	p my_var
 
-		define_method :my_mythod do
-		    "#{my_var} in the method"
-		end
+	define_method :my_mythod 
+		"#{my_var} in the method"
+	end
 end
 {% endhighlight %}
 诚心默念动态方法大法好(逃
