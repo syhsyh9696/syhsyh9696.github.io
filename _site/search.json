@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Laosiji Script",
+      "category" : "Ruby notes",
+      "tags"     : "Ruby",
+      "url"      : "/laosiji-script/",
+      "date"     : "03 Apr 2017"
+    } ,
+  
+    {
       "title"    : "Emacs 配置文件格式化",
       "category" : "SYH的自留地",
       "tags"     : "Daily",

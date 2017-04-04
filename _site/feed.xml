@@ -5,9 +5,23 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Mar 2017 23:20:29 +0800</pubDate>
-    <lastBuildDate>Fri, 31 Mar 2017 23:20:29 +0800</lastBuildDate>
+    <pubDate>Tue, 04 Apr 2017 21:39:32 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Apr 2017 21:39:32 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Laosiji Script</title>
+        <description>&lt;p&gt;&lt;strong&gt;老司机发车了&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;最近混破群混的多，结果被破群的人喷Chrome装了很多开车插件， 我是那种整天伸手的人吗？？从零开始写一个简单的开车Bot好了。&lt;/p&gt; &lt;p&gt;想到这里，我就打开了我的工具包，找到了&lt;a href=&quot;http://www.btkiki.com&quot;&gt;btkiki&lt;/a&gt; 这个网站，这个网站的好处很多啊，但是也有不少缺点&lt;/p&gt; &lt;ul&gt; &lt;li&gt;资源全&lt;/li&gt; &lt;li&gt;链接新&lt;/li&gt; &lt;li&gt; &lt;p&gt;请求简单&lt;/p&gt; &lt;/li&gt; &lt;li&gt;有广告&lt;/li&gt; &lt;li&gt;有时候点击没反应(利用Ruby客户端完美规避) 好了不要说了就是你了。&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;利用前一阵子未完成的爬虫中学习的知识，nokogiri和rest-client 完成链接的请求和解析。&lt;/p&gt; &lt;p&gt;首先是请求，经过charles抓包发现，Get一个base url + 番号.html就可以 那么利用rest-client来完成&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rest-client'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;www.btkiki.com/s/&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.html&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;RestClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;好了，现在已经获得相关的番号的页面了，保存在response.body里面， 现在就是要解析它了，经过分析，下一个子页面请求的链接里面就包含 着每一个磁力链的散列值，只要提取出它的值加上车头就是完美的磁力 链了，perfect，这时候就要用nokogiri完成这一个工作了，真是相当 好用的解析神器&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'nokogiri'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;magnet:?xt=urn:btih:&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;magnet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nokogiri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span...</description>
+        <pubDate>Mon, 03 Apr 2017 15:43:37 +0800</pubDate>
+        <link>http://localhost:4000/laosiji-script/</link>
+        <guid isPermaLink="true">http://localhost:4000/laosiji-script/</guid>
+        
+        <category>Ruby</category>
+        
+        
+        <category>Ruby notes</category>
+        
+      </item>
     
       <item>
         <title>Emacs 配置文件格式化</title>
@@ -257,20 +271,6 @@ HP Gen8服务器，等到了我就可以给我的大姐姐们造一个大别墅(
         
         
         <category>SYH的自留地</category>
-        
-      </item>
-    
-      <item>
-        <title>Ruby的集合遍历</title>
-        <description>&lt;h2 id=&quot;ruby的遍历方法&quot;&gt;&lt;strong&gt;Ruby的遍历方法&lt;/strong&gt;&lt;/h2&gt; &lt;p&gt;因为最近经常需要用到集合的遍历，看完镐头书(Ruby Programming) 相关章节后总结下常见的方法。&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;each&lt;/em&gt;&lt;/strong&gt; 基本上来说就是处于取代了for的作用，当你需要迭代一个集合的时候 each都是可以的选择，而且each比for方便很多&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Do something &lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;map&lt;/em&gt;&lt;/strong&gt; 和each的作用大概相同，最大的不同就是map会将处理后的结果返回， 省了temp一类的中间变量&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Return [2, 4, 6] &lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:upcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Return ['A', 'B', 'C']&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; &lt;p&gt;&lt;strong&gt;&lt;em&gt;select&lt;/em&gt;&lt;/strong&gt; 从前向后的迭代计算计算结果为true的元素，当作正向的filter&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span...</description>
-        <pubDate>Sat, 10 Dec 2016 17:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Ruby-traversal/</link>
-        <guid isPermaLink="true">http://localhost:4000/Ruby-traversal/</guid>
-        
-        <category>Ruby</category>
-        
-        
-        <category>Ruby notes</category>
         
       </item>
     
