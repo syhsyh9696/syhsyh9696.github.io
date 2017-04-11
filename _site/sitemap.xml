@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	  <url>
+		<loc>http://localhost:4000/javlibrary-spider/</loc>
+	  </url>
+	
+	  <url>
 		<loc>http://localhost:4000/laosiji-script/</loc>
 	  </url>
 	

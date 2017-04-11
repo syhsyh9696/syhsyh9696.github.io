@@ -5,9 +5,63 @@
     <description>CS / Ruby / OSU player</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Apr 2017 21:39:32 +0800</pubDate>
-    <lastBuildDate>Tue, 04 Apr 2017 21:39:32 +0800</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 11:52:06 +0800</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 11:52:06 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Javlibrary Spider</title>
+        <description>&lt;p&gt;&lt;strong&gt;关怀宅男企划[0]&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;春天到了，空气弥漫的荷尔蒙的味道，这让宅男怎么办？
+所以，开始一个新的企划,就来扒Javlibrary吧。&lt;/p&gt;
+
+&lt;p&gt;利用Gem&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nokogiri&lt;/li&gt;
+  &lt;li&gt;Rest-client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一开始我只是闲的无聊的时候再翻友田桑的作品，我发现我不能一次性获得
+她所有的影片信息，这很不爽啊是不是！通过观察发现，我从页面中发现一个
+href能成功获得最后一页的页码，提取出来之后用obj#upto方法迭代，拿到了
+左右影片的网站内部编码。&lt;/p&gt;
+
+&lt;p&gt;然后获得了一个能获得大姐姐所有作品的方法，然后下一步就是获得所有大姐姐
+的名字和编码，Javlibrary提供了名册这个href。&lt;/p&gt;
+
+&lt;p&gt;拿到所有的名字，方法同上，拿到最后的页码然后解析，不过这次是两次迭代，
+迭代26个字母和页码。这样你就获得了所有大姐姐名字的方法。&lt;/p&gt;
+
+&lt;p&gt;两者结合，你就拥有了带名字的所有影片编码，当然多体作品是同时拥有很多
+演员，也就是说里面的编码很多都是重复的，没关系我们可以先不用管，放到
+数据库阶段处理。&lt;/p&gt;
+
+&lt;p&gt;根据编号你就可以请求Javlibrary的影片信息了，嗯，很爽，分析页面能拿到
+演员导演时间番号长度balabala，你可以先保存成文件，方便多线程。&lt;/p&gt;
+
+&lt;p&gt;最后的最后，就是插数据库了，多线程插入的速度比单线程不知道高到哪里去了，
+主要解决的问题就是正确的给一个地址+偏移量，数据库的设计还是Jango完成的。&lt;/p&gt;
+
+&lt;p&gt;做完这些做了一个小小的bot用于开车，&lt;a href=&quot;http://telegram.me/ujnlaosijibot&quot;&gt;@ujnlaosijibot&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果你能看懂的话，仓库在&lt;a href=&quot;http://www.github.com/syhsyh9696/javlibrary-spider&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;当然最后的sql在&lt;a href=&quot;https://pan.baidu.com/s/1bprexx9&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最后祝你，身体健康，再见。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 11 Apr 2017 09:16:48 +0800</pubDate>
+        <link>http://localhost:4000/javlibrary-spider/</link>
+        <guid isPermaLink="true">http://localhost:4000/javlibrary-spider/</guid>
+        
+        <category>Ruby</category>
+        
+        
+        <category>SYH的自留地</category>
+        
+      </item>
     
       <item>
         <title>Laosiji Script</title>
@@ -218,56 +272,6 @@ HP Gen8服务器，等到了我就可以给我的大姐姐们造一个大别墅(
         <guid isPermaLink="true">http://localhost:4000/Emacs-chapter_2/</guid>
         
         <category>Daily</category>
-        
-        
-        <category>SYH的自留地</category>
-        
-      </item>
-    
-      <item>
-        <title>12月的侃山街</title>
-        <description>&lt;h2 id=&quot;osu触盘计划-中期报告&quot;&gt;&lt;strong&gt;OSU!触盘计划-中期报告&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;本来我和&lt;a href=&quot;https://github.com/CocherZhang&quot;&gt;&lt;strong&gt;&lt;em&gt;@Cocher老贼&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;
-玩OSU!都是用键盘鼠标的，没想到他居然背叛了组织，并且指法从’标准指法’换成了’兰花指法’,
-我和他印PCB做触盘的计划(JiJi盘 project)就彻底泡汤了。&lt;/p&gt;
-
-&lt;p&gt;于是找了一个废旧鼠标的PCB板，加上从淘宝买的cherry轴和试轴器，一个硬盘托架，制作成了一个触盘，
-没想到还不错
-&lt;img src=&quot;http://7xqbr4.com1.z0.glb.clouddn.com/photo_2016-12-15_22-50-37.jpg&quot; alt=&quot;OSU! Keyboard&quot; /&gt;
-就是这个玩意，没错键帽(来自宿舍最凶的男人的C87)就是故意装反的。&lt;/p&gt;
-
-&lt;p&gt;我这个触盘成功通过了我的十万次打击测试，而且稳定性非常感人，触发非常的灵敏，这样就不用天天背着我的键盘了。
-话说我那个87键Filco Ninja Majestouch-2真的是沉的我不想再说什么了，
-真的比我的X1-Carbon+充电器还沉……&lt;/p&gt;
-
-&lt;p&gt;而且有了这个触盘之后名次已经开始涨上来了，原来玩不好就是怪外设红红火火
-&lt;img src=&quot;http://7xqbr4.com1.z0.glb.clouddn.com/2016-12-15-Performance.jpg&quot; alt=&quot;Performance&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以后要是OSU!又厉害的话我肯定会在tag-OSU!更新的。&lt;/p&gt;
-
-&lt;h2 id=&quot;新键盘计划&quot;&gt;&lt;strong&gt;新键盘计划&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;不过最近可能玩的时间就会少很多了，马上要到考试周了，年前还要听母上大人的要求去北京学GRE，也是烦的很啊。
-我觉得为了我的腰我觉得我最近可能要再买一把小一点的键盘了，在外地的话我肯定天天背着书包，87真的是太！沉！了！&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Poker(太丑)&lt;/li&gt;
-  &lt;li&gt;Filco minila (赤)&lt;/li&gt;
-  &lt;li&gt;HHKB (professional-2)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;也就只能从后面两个选一个把，如果真买了的话我一定会在我的自留地装逼的恍恍惚惚。
-当然你们如果看了这篇烂文并且有什么意见的话，可以在下面评论，
-或者你觉得哪个键盘好一些也可以评论告诉我，如果采用的话我请你吃饭啊红红火火。&lt;/p&gt;
-
-&lt;p&gt;最后祝看我吐槽破文章的人-身体健康，再见。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 15 Dec 2016 17:00:00 +0800</pubDate>
-        <link>http://localhost:4000/OSU!-keyboard/</link>
-        <guid isPermaLink="true">http://localhost:4000/OSU!-keyboard/</guid>
-        
-        <category>Daily</category>
-        
-        <category>OSU!</category>
         
         
         <category>SYH的自留地</category>
